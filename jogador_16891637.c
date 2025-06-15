@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "carta.h" 
-#include "jogador_16891637.h"
+#include <string.h>
+#include "../carta.h" 
+#include "jogador_16891637.h" 
 
 // --- Variáveis Globais ---
 static int id_global;
@@ -117,12 +118,12 @@ const char* nome_jogador_16891637() {
     return "Mateus Nunes";
 }
 
-void iniciar_16891637(int meu_id, int total_jogadores) {
+void iniciar_jogador_16891637(int meu_id, int total_jogadores) {
     id_global = meu_id;
     num_jogadores_global = total_jogadores;
 }
 
-void nova_rodada_16891637(int rodada, Carta carta_virada, Valor manilha, int n_cartas, Carta* minha_mao) {
+void nova_rodada_jogador_16891637(int rodada, Carta carta_virada, Valor manilha, int n_cartas, Carta* minha_mao) {
     num_cartas_mao_global = n_cartas;
     numero_rodada_atual = rodada;
     manilha_global = manilha; 
@@ -133,7 +134,7 @@ void nova_rodada_16891637(int rodada, Carta carta_virada, Valor manilha, int n_c
     }
 }
 
-int apostar_16891637(const int* apostas) {
+int apostar_jogador_16891637(const int* apostas) {
     if (numero_rodada_atual == 1) {
         int contador_aposta = 0;
         contador_aposta += contar_A_na_mao();
@@ -176,7 +177,7 @@ int apostar_16891637(const int* apostas) {
     return 0;
 }
 
-int jogar_16891637(const Carta* mesa, int num_na_mesa) {
+int jogar_jogador_16891637(const Carta* mesa, int num_na_mesa) {
     int idx_maior_na_mesa = maior_carta_na_mesa(mesa, num_na_mesa);
     
     // Se a mesa estiver vazia, joga a maior carta não-manilha.
