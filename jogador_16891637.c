@@ -180,12 +180,12 @@ int apostar_jogador_16891637(const int* apostas) {
 int jogar_jogador_16891637(const Carta* mesa, int num_na_mesa) {
     int idx_maior_na_mesa = maior_carta_na_mesa(mesa, num_na_mesa);
     
-    // Se a mesa estiver vazia, joga a maior carta não-manilha.
+    // Se a mesa estiver vazia, joga a menor carta.
     if (idx_maior_na_mesa == -1) {
-        int idx_maior_na_mao = maior_carta_nao_manilha_jogador();
-        if (idx_maior_na_mao != -1) {
-            marcar_carta_como_jogada(idx_maior_na_mao);
-            return idx_maior_na_mao;
+        int idx_menor_na_mao1 = menor_carta_jogador();
+        if (idx_menor_na_mao1 != -1) {
+            marcar_carta_como_jogada(idx_menor_na_mao1);
+            return idx_menor_na_mao1;
         }
     } else { // Se a mesa não está vazia
         Carta carta_mais_forte_mesa = mesa[idx_maior_na_mesa];
